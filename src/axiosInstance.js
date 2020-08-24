@@ -16,9 +16,9 @@ axiosInstance.interceptors.response.use(response => response,
         if (error.response.status === 401 && error.response.statusText === "Unauthorized"){
             const refresh_token = localStorage.getItem('refresh_token');
 
-            return axiosInstance.post('/api/token', {refresh: refresh_token})
+            return axiosInstance.post('/rest-auth/login/', {refresh: refresh_token})
             .then(response => {
-                localStorage.setItem('access_token', response.data.access);
+                localStorage.setItem('access_token', response.data.key);
                 localStorage.setItem('refresh_token', response.data.refresh);
 
                 axiosInstance.defaults['Authorization'] = "JWT" + response.data.access;
