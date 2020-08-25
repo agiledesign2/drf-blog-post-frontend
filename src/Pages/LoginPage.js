@@ -22,14 +22,14 @@ const LoginPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try{
-      const response = await axiosInstance.post('/rest-auth/login/',{
+      const response = await axiosInstance.post('/rest-auth/login/', {
         username: 'dgomez5',
         email: email,
         password: password
       });
-      axiosInstance.defaults.headers['Authorization'] = "JWT" + response.data.key;
-      localStorage.setItem('access_token', response.data.key);
-      localStorage.setItem('refresh_token', response.data.refresh);
+      //axiosInstance.defaults.headers['Authorization'] = response.data.key;
+      localStorage.setItem('access_key', response.data.key);
+      //localStorage.setItem('refresh_token', response.data.refresh);
       setisLoggedIn(true);
     }catch(error){
       setisLoggedIn(false);
