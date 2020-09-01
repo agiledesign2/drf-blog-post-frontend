@@ -3,7 +3,7 @@ import {Redirect} from 'react-router-dom'
 import axiosInstance from '../axiosInstance';
 
 const LoginPage = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoggedIn, setisLoggedIn] = useState(false)
 
@@ -11,8 +11,8 @@ const LoginPage = () => {
    
   });
 
-  const handleUserChange = (event) => {
-    setUsername(event.target.value);
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
   };
 
   const handlePasswordChange = (event) => {
@@ -23,7 +23,8 @@ const LoginPage = () => {
     event.preventDefault();
     try{
       const response = await axiosInstance.post('/rest-auth/login/', {
-        username: 'username',
+        username: 'dgomez5',
+        email: email,
         password: password
       });
       axiosInstance.defaults.headers['Authorization'] = response.data.key;
@@ -44,16 +45,16 @@ const LoginPage = () => {
 
           <form className='login' onSubmit={handleSubmit}>
             <div className='form-group'>
-              <label htmlFor='id_username'>Username</label>
+              <label htmlFor='id_login'>E-mail</label>
               <input
-                type='text'
-                name='username'
-                placeholder='User name'
+                type='email'
+                name='login'
+                placeholder='E-mail address'
                 className='form-control'
                 required=''
-                value={username}
+                value={email}
                 id='id_login'
-                onChange={handleUserChange}
+                onChange={handleEmailChange}
               />
               <div className='invalid-feedback'></div>
             </div>
