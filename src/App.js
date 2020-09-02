@@ -6,6 +6,7 @@ import LoginPage from './Pages/LoginPage';
 import LogoutPage from './Pages/LogoutPage';
 import SignupPage from './Pages/SignupPage';
 import ResetPage from './Pages/ResetPage';
+import ResetConfirmPage from './Pages/ResetConfirmPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -30,6 +31,10 @@ function App() {
 
         <Route path='/reset'>
           <ResetPage/>
+        </Route>
+
+        <Route path='/confirm'>
+          <ResetConfirmPage/>
         </Route>        
 
       </Switch>
