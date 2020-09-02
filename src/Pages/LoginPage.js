@@ -100,7 +100,7 @@ const LoginPage = () => {
             <div className='text-center'>
               <small className='text-muted text-center'>
                 Don"t have an account yet?{' '}
-                <a href='/accounts/signup/?next=%2F'>Sign up </a>.
+                <a href='/signup/'>Sign up </a>.
               </small>
             </div>
           </form>
