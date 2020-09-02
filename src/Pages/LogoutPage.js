@@ -2,22 +2,12 @@ import React, { useState, useEffect } from 'react';
 import {Redirect} from 'react-router-dom'
 import axiosInstance from '../axiosInstance';
 
-const LoginPage = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [isLoggedIn, setisLoggedIn] = useState(false)
+const LogoutPage = () => {
+  const [isLoggedIn, setisLoggedIn] = useState(true)
 
   useEffect(() => {
    
   });
-
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -49,7 +39,7 @@ const LoginPage = () => {
             </button>
             <div className='text-center'>
               <small className='text-muted text-center'>
-                Go Home?{' '}
+                Go back home?{' '}
                 <a href='/'>Home </a>.
               </small>
             </div>

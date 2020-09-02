@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {Redirect} from 'react-router-dom'
 import axiosInstance from '../axiosInstance';
 
-const LoginPage = () => {
+const SignupPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoggedIn, setisLoggedIn] = useState(false)
