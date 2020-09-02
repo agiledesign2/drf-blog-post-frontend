@@ -34,7 +34,7 @@ const ResetPage = () => {
     <div className='container'>
       <div className='row justify-content-center'>
         <div className='col-12 col-md-5 col-xl-4 my-5'>
-          <h1>Sign In</h1>
+          <h1>Password Reset</h1>
 
           <form className='login' onSubmit={handleSubmit}>
             <div className='form-group'>
